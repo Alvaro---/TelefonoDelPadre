@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TelefonoDelPadre</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="strTitulo">Telefono del Padre</string>
+    <string name="strBtnInicio">Llamar...</string>
+    <string name="strBtnProgramarLlamada">Programar Llamada </string>
+    <string name="strBtnHistorial">Capital de Gracias... Mis llamadas</string>
+
+
+</resources>
