@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/background_dark"
+    android:weightSum="1">
 
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="288dp"
+        android:id="@+id/imgPadre"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/padre" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.90"
+        android:id="@+id/lblFrase"
+        android:textColor="#fffdf3ff"
+        android:textStyle="italic"
+        android:textSize="45dp"
+        android:text="aaa" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Preguntar de nuevo"
+        android:id="@+id/btnPreguntarDeeNuevo"
+        android:layout_gravity="center_horizontal" />
 </LinearLayout>
