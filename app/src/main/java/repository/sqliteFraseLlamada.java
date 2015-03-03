@@ -22,13 +22,23 @@ public class sqliteFraseLlamada extends repoFraseLlamada{
 
         String frase="";
         SQLiteDatabase db= conex.getWritableDatabase();
+
+        //conex.onUpgrade(db,1,2);
+        //ACTUALIZACION DE TABLA
+
         String consulta="select frase from frases";
         Cursor fila=db.rawQuery(consulta,null);
         if (fila.moveToFirst()){
+            int val=fila.getCount();
+            int numero=(int) (Math.random() * val);
+            for (int i=0;i<numero;i++){
+                fila.moveToNext();
+            }
             frase=fila.getString(0);
         }else{
             frase="No existe actividad";
         }
+        fila.close();
         db.close();
 
         return frase;

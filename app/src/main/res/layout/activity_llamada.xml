@@ -20,8 +20,9 @@
         android:id="@+id/lblFrase"
         android:textColor="#fffdf3ff"
         android:textStyle="italic"
-        android:textSize="45dp"
-        android:text="aaa" />
+        android:textSize="25dp"
+        android:text=""
+        android:gravity="center_vertical|center_horizontal" />
 
     <Button
         android:layout_width="fill_parent"
