@@ -13,6 +13,7 @@ import android.widget.Button;
 public class MainActivity extends Activity {
 
     Button btnLlamar;
+    Button btnProgramar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,5 +28,15 @@ public class MainActivity extends Activity {
                 startActivity(llamar);
             }
         });
-}
+
+        btnProgramar=(Button)findViewById(R.id.btnProgramarLlamada);
+        btnProgramar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent programar=new Intent(MainActivity.this, ProgramarActivity.class);
+                startActivity(programar);
+            }
+        });
+
+    }
 }

@@ -1,10 +1,12 @@
 package com.example.secretara_santuario.telefonodelpadre;
 
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -92,5 +94,12 @@ public class LlamadaActivity extends Activity implements TextToSpeech.OnInitList
                 startActivity(installTTSIntent);
             }
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //Alternativa 1
+        getMenuInflater().inflate(R.menu.activity_llamada, menu);
+        return true;
     }
 }

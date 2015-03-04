@@ -5,6 +5,11 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+    <string name="opcion1">Añadir una meditacion</string>
+    <string name="opcion2">Guardar como frase del dia</string>
+    <string name="opcion3">Compartir esta frase</string>
+    <string name="opcion4">Ver publicaciones</string>
+
     <string name="strTitulo">Telefono del Padre</string>
     <string name="strBtnInicio">Llamar...</string>
     <string name="strBtnProgramarLlamada">Programar Llamada </string>

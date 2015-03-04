@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_agenda"
+    android:weightSum="1">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.06" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <RadioButton
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Todos los dias"
+           android:id="@+id/radioTodos"
+           android:background="#ffe1ffdd"
+           android:layout_marginLeft="51dp"
+           android:layout_centerVertical="true"
+           android:layout_alignParentLeft="true"
+           android:layout_alignParentStart="true"
+           android:layout_marginStart="51dp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Solo unos dias"
+            android:id="@+id/radioSemana"
+            android:background="#ffdae8ff"
+            android:layout_alignTop="@+id/radioTodos"
+            android:layout_toRightOf="@+id/radioTodos" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:layout_weight="0.10">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="L"
+            android:id="@+id/checkLunes"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="36dp"
+            android:layout_marginStart="36dp"
+            android:checked="false" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="M"
+            android:id="@+id/checkMartes"
+            android:checked="false"
+            android:layout_alignTop="@+id/checkLunes"
+            android:layout_toRightOf="@+id/checkLunes"
+            android:layout_toEndOf="@+id/checkLunes" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mi"
+            android:id="@+id/checkMiercoles"
+            android:checked="false"
+            android:layout_alignTop="@+id/checkMartes"
+            android:layout_toRightOf="@+id/checkMartes"
+            android:layout_toEndOf="@+id/checkMartes"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="J"
+            android:id="@+id/checkJueves"
+            android:checked="false"
+            android:layout_alignTop="@+id/checkMiercoles"
+            android:layout_toRightOf="@+id/checkMiercoles"
+            android:layout_toEndOf="@+id/checkMiercoles"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="V"
+            android:id="@+id/checkViernes"
+            android:checked="false"
+            android:layout_alignTop="@+id/checkJueves"
+            android:layout_toRightOf="@+id/checkJueves"
+            android:layout_toEndOf="@+id/checkJueves"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="S"
+            android:id="@+id/checkSabado"
+            android:checked="false"
+            android:layout_alignTop="@+id/checkViernes"
+            android:layout_toRightOf="@+id/checkViernes"
+            android:layout_toEndOf="@+id/checkViernes"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="D"
+            android:id="@+id/checkDomingo"
+            android:checked="false"
+            android:layout_alignTop="@+id/checkSabado"
+            android:layout_toRightOf="@+id/checkSabado"
+            android:layout_toEndOf="@+id/checkSabado"/>
+
+
+    </RelativeLayout>
+
+    <TimePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/timePicker"
+        android:layout_weight="0.06"
+        android:layout_gravity="center_horizontal"/>
+
+
+</LinearLayout>
