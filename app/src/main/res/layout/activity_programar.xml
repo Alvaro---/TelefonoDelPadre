@@ -8,39 +8,48 @@
     <Space
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.06" />
+        android:layout_weight="0.25" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:id="@+id/radioGroupDias"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+
+            <RadioButton
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Todos los dias"
+               android:id="@+id/radioTodos"
+               android:background="#ffe1ffdd"
+               android:layout_marginLeft="51dp"
+               android:layout_centerVertical="true"
+               android:layout_alignParentLeft="true"
+               android:layout_alignParentStart="true"
+               android:layout_marginStart="51dp"
+               android:checked="true"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Solo unos dias"
+                android:id="@+id/radioSemana"
+                android:background="#ffdae8ff"
+                android:layout_alignTop="@+id/radioTodos"
+                android:layout_toRightOf="@+id/radioTodos"
+                android:checked="false" />
+
+
+    </RadioGroup>
 
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp">
-
-        <RadioButton
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="Todos los dias"
-           android:id="@+id/radioTodos"
-           android:background="#ffe1ffdd"
-           android:layout_marginLeft="51dp"
-           android:layout_centerVertical="true"
-           android:layout_alignParentLeft="true"
-           android:layout_alignParentStart="true"
-           android:layout_marginStart="51dp" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Solo unos dias"
-            android:id="@+id/radioSemana"
-            android:background="#ffdae8ff"
-            android:layout_alignTop="@+id/radioTodos"
-            android:layout_toRightOf="@+id/radioTodos" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="57dp"
-        android:layout_weight="0.10">
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeCheck"
+        android:visibility="invisible">
 
         <CheckBox
             android:layout_width="wrap_content"
@@ -123,6 +132,67 @@
         android:id="@+id/timePicker"
         android:layout_weight="0.06"
         android:layout_gravity="center_horizontal"/>
+
+
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.30"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:id="@+id/radioGroupSonido">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sonido"
+            android:id="@+id/radioSonido"
+            android:layout_marginLeft="51dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="40dp"
+            android:checked="true"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vibracion"
+            android:id="@+id/radioVibracion"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="true"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Silencio"
+            android:id="@+id/radioSilencio"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="true"/>
+
+    </RadioGroup>
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Aceptar"
+        android:id="@+id/btnAceptar"
+        android:layout_weight="0.06"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="40dp"/>
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Cancelar"
+        android:id="@+id/btnCancelar"
+        android:layout_weight="0.06"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"/>
 
 
 </LinearLayout>

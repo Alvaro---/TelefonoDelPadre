@@ -107,7 +107,7 @@ public class Conexion extends SQLiteOpenHelper {
     private String a81="insert into frases values ('No malinterpretemos los signos de los tiempos. Debemos tener más en cuenta la individualidad, de lo contrario educamos masificadamente')";
 
 
-            public static Conexion getInstance(Context con) {
+    public static Conexion getInstance(Context con) {
         /**
          * use the application context as suggested by CommonsWare.
          * this will ensure that you dont accidentally leak an Activitys
