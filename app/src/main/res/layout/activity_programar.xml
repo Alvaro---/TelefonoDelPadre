@@ -157,16 +157,6 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Vibracion"
-            android:id="@+id/radioVibracion"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:checked="true"/>
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="Silencio"
             android:id="@+id/radioSilencio"
             android:layout_centerVertical="true"
