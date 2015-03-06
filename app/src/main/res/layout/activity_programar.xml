@@ -157,6 +157,16 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Vibracion"
+            android:id="@+id/radioVibracion"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="true"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Silencio"
             android:id="@+id/radioSilencio"
             android:layout_centerVertical="true"
@@ -173,7 +183,16 @@
         android:id="@+id/btnAceptar"
         android:layout_weight="0.06"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Eliminar Notificaciones"
+        android:id="@+id/btnBorrarNotificaciones"
+        android:layout_weight="0.06"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"/>
 
     <Button
         android:layout_width="200dp"
@@ -183,6 +202,5 @@
         android:layout_weight="0.06"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="10dp"/>
-
 
 </LinearLayout>
