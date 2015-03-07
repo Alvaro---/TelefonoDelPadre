@@ -23,6 +23,13 @@
         <activity android:name=".ProgramarActivity">
         </activity>
 
+        <service
+            android:name=".servicioClass"
+            android:process=":my_proceso"></service>
+
+        <receiver android:name="MyBroadcastReceiver" >
+        </receiver>
+
     </application>
 
 </manifest>
