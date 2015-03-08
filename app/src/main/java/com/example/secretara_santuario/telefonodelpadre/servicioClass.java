@@ -10,6 +10,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.RingtoneManager;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.IBinder;
 import android.widget.Toast;
 
@@ -29,16 +30,19 @@ public class servicioClass extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Toast.makeText(this,"Servicio Destruido",Toast.LENGTH_LONG).show();
-        String mydate = java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
+        //Toast.makeText(this,"Servicio Iniciado",Toast.LENGTH_LONG).show();
+        //String mydate = java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
+        //Bundle bun=intent.getExtras();
+        //Toast.makeText(this,bun.getString("Sonido")+"aaaaa",Toast.LENGTH_LONG).show();
+        sonido=intent.getIntExtra("sonido",0);
         crearNotificaciones();
-       return START_STICKY;
+        return START_STICKY;
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        //Toast.makeText(this,"Servicio Destruido",Toast.LENGTH_LONG).show();
+        //Toast.makeText(this,"Servicio destruido",Toast.LENGTH_LONG).show();
     }
 
     private void crearNotificaciones() {
@@ -53,8 +57,8 @@ public class servicioClass extends Service {
         notificacion.setAutoCancel(true);
 
         //Sonido
-        sonido=ProgramarActivity.darSonido();
-        Toast.makeText(this, sonido+"",Toast.LENGTH_LONG).show();
+
+        //***Toast.makeText(this, sonido+"... En Service",Toast.LENGTH_LONG).show();
         if (sonido==1) {
             Uri sonido = RingtoneManager.getDefaultUri(Notification.DEFAULT_SOUND);
             notificacion.setSound(sonido);
@@ -67,14 +71,14 @@ public class servicioClass extends Service {
         //Accion de la notificacion
         PendingIntent pending;
         Intent intent=new Intent();
-        Context con=getApplicationContext(); // tambien podria llamarse en el intent, con ProgarmarActivity.getContext, o con getAplicationContext
-        intent.setClass(con, LlamadaActivity.class);
-        intent.putExtra("ID",1);
-        pending=PendingIntent.getActivity(con,0,intent,0);
+        //Context con=getApplicationContext(); // tambien podria llamarse en el intent, con ProgarmarActivity.getContext, o con getAplicationContext
+        intent.setClass(this, LlamadaActivity.class);
+        //intent.putExtra("ID",1010);
+        pending=PendingIntent.getActivity(this,0,intent,0);
         notificacion.setContentIntent(pending);
 
-        Notification n=notificacion.build(); // Esta opcion sirve para construit por el motodo antiguo, para api anterio a 16. Se puede cambiar por .build()
+        Notification n=notificacion.getNotification(); // Esta opcion sirve para construit por el motodo antiguo, para api anterio a 16. Se puede cambiar por .build()
         NotificationManager nm=(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-        nm.notify(1,n);
+        nm.notify(1010,n);
     }
 }

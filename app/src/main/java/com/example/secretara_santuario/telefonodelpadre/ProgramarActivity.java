@@ -29,6 +29,8 @@ import java.util.Calendar;
  */
 public class ProgramarActivity extends Activity {
 
+    AlarmManager alarmManager;
+
     RadioGroup radioGroupDias, radioGroupSonido;
     RadioButton radioTodos, radioDias, radioSilencio, radioSonido;
 
@@ -41,7 +43,7 @@ public class ProgramarActivity extends Activity {
     TimePicker timePicker;
 
     //Si es 0 sera silencio, 1 sonido
-    static int sonido=0;
+    int sonido=0;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,6 +86,13 @@ public class ProgramarActivity extends Activity {
                 onDestroy();
             }
         });
+
+        btnBorrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cancelAlarm();
+            }
+        });
     }
 
     //cargar todos lo elementos de la interfaz
@@ -105,6 +114,8 @@ public class ProgramarActivity extends Activity {
     }
 
     public void startAlert(){
+        //***Toast.makeText(this,sonido+"... en clase",Toast.LENGTH_LONG).show();
+
         cal=Calendar.getInstance();
         cal.setTimeInMillis(System.currentTimeMillis());
         cal.set (Calendar.HOUR_OF_DAY, timePicker.getCurrentHour());
@@ -114,14 +125,21 @@ public class ProgramarActivity extends Activity {
         cal.set (Calendar.SECOND, 0);
 
         Intent intent = new Intent(this, MyBroadcastReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(
-                this.getApplicationContext(), 234324243, intent, 0);
-        AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.putExtra("varSonido",sonido);
+
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 234324243, intent, 0);
+        alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
         alarmManager.set(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pendingIntent);
         Toast.makeText(this, "Alarma iniciada", Toast.LENGTH_LONG).show();
     }
 
-    public static int darSonido(){
-        return sonido;
+    public void cancelAlarm(){
+        Intent intent = new Intent(this, MyBroadcastReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 234324243, intent, 0);
+        alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        alarmManager.cancel(pendingIntent);
     }
+
 }
