@@ -21,7 +21,7 @@ import java.util.Calendar;
 
 public class servicioClass extends Service {
 
-    int sonido=ProgramarActivity.sonido;
+    int sonido;
     @Override
     public IBinder onBind(Intent intent) {
         return null;
@@ -50,8 +50,11 @@ public class servicioClass extends Service {
         notificacion.setContentTitle("Pare Kentenich");
         notificacion.setContentText("Desea devolver la llamada?");
         notificacion.setContentInfo("Desde el Snatuario");
+        notificacion.setAutoCancel(true);
 
         //Sonido
+        sonido=ProgramarActivity.darSonido();
+        Toast.makeText(this, sonido+"",Toast.LENGTH_LONG).show();
         if (sonido==1) {
             Uri sonido = RingtoneManager.getDefaultUri(Notification.DEFAULT_SOUND);
             notificacion.setSound(sonido);
@@ -70,7 +73,7 @@ public class servicioClass extends Service {
         pending=PendingIntent.getActivity(con,0,intent,0);
         notificacion.setContentIntent(pending);
 
-        Notification n=notificacion.getNotification(); // Esta opcion sirve para construit por el motodo antiguo, para api anterio a 16. Se puede cambiar por .build()
+        Notification n=notificacion.build(); // Esta opcion sirve para construit por el motodo antiguo, para api anterio a 16. Se puede cambiar por .build()
         NotificationManager nm=(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
         nm.notify(1,n);
     }

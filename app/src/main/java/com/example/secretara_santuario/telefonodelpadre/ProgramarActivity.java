@@ -41,7 +41,7 @@ public class ProgramarActivity extends Activity {
     TimePicker timePicker;
 
     //Si es 0 sera silencio, 1 sonido
-    static int sonido;
+    static int sonido=0;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,7 +81,7 @@ public class ProgramarActivity extends Activity {
         btnCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                onDestroy();
             }
         });
     }
@@ -121,4 +121,7 @@ public class ProgramarActivity extends Activity {
         Toast.makeText(this, "Alarma iniciada", Toast.LENGTH_LONG).show();
     }
 
+    public static int darSonido(){
+        return sonido;
+    }
 }

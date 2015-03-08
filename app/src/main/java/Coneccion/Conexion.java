@@ -18,6 +18,8 @@ public class Conexion extends SQLiteOpenHelper {
 
     //creacion de tablas
     private String tb1="CREATE TABLE frases (frase TEXT primarykey)";
+    private String tb2C="CREATE TABLE meditacion(frase TEXT, comentario TEXT, primary key (frase, comentario), foreign key (frase) references frases)";
+    private String tb3F="CREATE TABLE fechas (fecha TEXT primarykey, frase TEXT foreign key (frase) references frases)";
 
     //modificacion de tablas
 

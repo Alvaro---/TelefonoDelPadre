@@ -13,6 +13,8 @@ public class FraseLlamada {
 
     String frase;
     Context con;
+    String meditacionPerssonal;
+
     public repoFraseLlamada repository=new sqliteFraseLlamada();
 
     public FraseLlamada(String frase, Context con) {
