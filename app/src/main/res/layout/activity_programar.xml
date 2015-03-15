@@ -1,196 +1,165 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/fondo_agenda"
-    android:weightSum="1">
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.25" />
-
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:id="@+id/radioGroupDias"
-        android:orientation="horizontal"
-        android:gravity="center_vertical">
-
-
-            <RadioButton
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="Todos los dias"
-               android:id="@+id/radioTodos"
-               android:background="#ffe1ffdd"
-               android:layout_marginLeft="51dp"
-               android:layout_centerVertical="true"
-               android:layout_alignParentLeft="true"
-               android:layout_alignParentStart="true"
-               android:layout_marginStart="51dp"
-               android:checked="true"/>
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Solo unos dias"
-                android:id="@+id/radioSemana"
-                android:background="#ffdae8ff"
-                android:layout_alignTop="@+id/radioTodos"
-                android:layout_toRightOf="@+id/radioTodos"
-                android:checked="false" />
-
-
-    </RadioGroup>
-
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:isScrollContainer="true"
+    android:background="#fffffb88">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/relativeCheck"
-        android:visibility="invisible">
+        android:paddingBottom="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="16dp"
+        tools:context=".AlarmDetailsActivity" >
 
-        <CheckBox
+        <TimePicker
+            android:id="@+id/alarm_details_time_picker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="L"
-            android:id="@+id/checkLunes"
-            android:layout_centerVertical="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:id="@+id/alarm_details_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/alarm_details_time_picker"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:ems="10"
+            android:hint="@string/details_alarm_name" />
+
+        <View
+            android:id="@+id/divider2"
+            style="@style/Divider"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="36dp"
-            android:layout_marginStart="36dp"
-            android:checked="false" />
+            android:layout_below="@+id/alarm_details_name" />
 
-        <CheckBox
+        <com.example.secretara_santuario.telefonodelpadre.CustomSwitch
+            android:id="@+id/alarm_details_repeat_weekly"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="M"
-            android:id="@+id/checkMartes"
-            android:checked="false"
-            android:layout_alignTop="@+id/checkLunes"
-            android:layout_toRightOf="@+id/checkLunes"
-            android:layout_toEndOf="@+id/checkLunes" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/divider2"
+            android:checked="true"
+            android:text="@string/details_repeat_weekly" />
 
-        <CheckBox
+        <View
+            android:id="@+id/divider1"
+            style="@style/Divider"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/alarm_details_repeat_weekly" />
+
+        <com.example.secretara_santuario.telefonodelpadre.CustomSwitch
+            android:id="@+id/alarm_details_repeat_sunday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mi"
-            android:id="@+id/checkMiercoles"
-            android:checked="false"
-            android:layout_alignTop="@+id/checkMartes"
-            android:layout_toRightOf="@+id/checkMartes"
-            android:layout_toEndOf="@+id/checkMartes"/>
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/divider1"
+            android:checked="true"
+            android:text="@string/details_sunday" />
 
-        <CheckBox
+        <com.example.secretara_santuario.telefonodelpadre.CustomSwitch
+            android:id="@+id/alarm_details_repeat_monday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="J"
-            android:id="@+id/checkJueves"
-            android:checked="false"
-            android:layout_alignTop="@+id/checkMiercoles"
-            android:layout_toRightOf="@+id/checkMiercoles"
-            android:layout_toEndOf="@+id/checkMiercoles"/>
+            android:layout_alignParentLeft="true"
+            android:layout_alignRight="@+id/alarm_details_repeat_sunday"
+            android:layout_below="@+id/alarm_details_repeat_sunday"
+            android:checked="true"
+            android:text="@string/details_monday" />
 
-        <CheckBox
+        <com.example.secretara_santuario.telefonodelpadre.CustomSwitch
+            android:id="@+id/alarm_details_repeat_tuesday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="V"
-            android:id="@+id/checkViernes"
-            android:checked="false"
-            android:layout_alignTop="@+id/checkJueves"
-            android:layout_toRightOf="@+id/checkJueves"
-            android:layout_toEndOf="@+id/checkJueves"/>
+            android:layout_alignParentLeft="true"
+            android:layout_alignRight="@+id/alarm_details_repeat_monday"
+            android:layout_below="@+id/alarm_details_repeat_monday"
+            android:checked="true"
+            android:text="@string/details_tuesday" />
 
-        <CheckBox
+        <com.example.secretara_santuario.telefonodelpadre.CustomSwitch
+            android:id="@+id/alarm_details_repeat_wednesday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="S"
-            android:id="@+id/checkSabado"
-            android:checked="false"
-            android:layout_alignTop="@+id/checkViernes"
-            android:layout_toRightOf="@+id/checkViernes"
-            android:layout_toEndOf="@+id/checkViernes"/>
+            android:layout_alignParentLeft="true"
+            android:layout_alignRight="@+id/alarm_details_repeat_tuesday"
+            android:layout_below="@+id/alarm_details_repeat_tuesday"
+            android:checked="true"
+            android:text="@string/details_wednesday" />
 
-        <CheckBox
+        <com.example.secretara_santuario.telefonodelpadre.CustomSwitch
+            android:id="@+id/alarm_details_repeat_thursday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="D"
-            android:id="@+id/checkDomingo"
-            android:checked="false"
-            android:layout_alignTop="@+id/checkSabado"
-            android:layout_toRightOf="@+id/checkSabado"
-            android:layout_toEndOf="@+id/checkSabado"/>
+            android:layout_alignParentLeft="true"
+            android:layout_alignRight="@+id/alarm_details_repeat_wednesday"
+            android:layout_below="@+id/alarm_details_repeat_wednesday"
+            android:checked="true"
+            android:text="@string/details_thursday" />
 
+        <com.example.secretara_santuario.telefonodelpadre.CustomSwitch
+            android:id="@+id/alarm_details_repeat_friday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignRight="@+id/alarm_details_repeat_thursday"
+            android:layout_below="@+id/alarm_details_repeat_thursday"
+            android:checked="true"
+            android:text="@string/details_friday" />
 
+        <com.example.secretara_santuario.telefonodelpadre.CustomSwitch
+            android:id="@+id/alarm_details_repeat_saturday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignRight="@+id/alarm_details_repeat_friday"
+            android:layout_below="@+id/alarm_details_repeat_friday"
+            android:checked="true"
+            android:text="@string/details_saturday" />
+
+        <View
+            android:id="@+id/divider4"
+            style="@style/Divider"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/alarm_details_repeat_saturday" />
+
+        <LinearLayout
+            android:id="@+id/alarm_ringtone_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/divider4"
+            android:background="@drawable/view_touch_selector"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/alarm_label_tone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@string/details_alarm_tone"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/alarm_label_tone_selection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:text="@string/details_alarm_tone_default"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider3"
+            style="@style/Divider"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/alarm_ringtone_container" />
     </RelativeLayout>
 
-    <TimePicker
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/timePicker"
-        android:layout_weight="0.06"
-        android:layout_gravity="center_horizontal"/>
-
-
-    <RadioGroup
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.30"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:id="@+id/radioGroupSonido">
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sonido"
-            android:id="@+id/radioSonido"
-            android:layout_marginLeft="51dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="40dp"
-            android:checked="true"/>
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Silencio"
-            android:id="@+id/radioSilencio"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:checked="true"/>
-
-    </RadioGroup>
-
-    <Button
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="Aceptar"
-        android:id="@+id/btnAceptar"
-        android:layout_weight="0.06"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="10dp"/>
-
-    <Button
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="Cancelar"
-        android:id="@+id/btnCancelar"
-        android:layout_weight="0.06"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="10dp"/>
-
-    <Button
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="Borrar alarma actual"
-        android:id="@+id/btnQuitar"
-        android:layout_weight="0.06"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="10dp"/>
-
-</LinearLayout>
+</ScrollView>

@@ -1,6 +1,7 @@
 package com.example.secretara_santuario.telefonodelpadre;
 
 import android.app.Activity;
+import android.app.ListActivity;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -33,7 +34,7 @@ public class MainActivity extends Activity {
         btnProgramar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent programar=new Intent(MainActivity.this, ProgramarActivity.class);
+                Intent programar=new Intent(MainActivity.this, ListaAlarmasActivity.class);
                 startActivity(programar);
             }
         });

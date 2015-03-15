@@ -16,5 +16,18 @@
     <string name="strBtnHistorial">Capital de Gracias... Mis llamadas</string>
 
 
+    <string name="details_alarm_name">Nota de Llamada</string>
+    <string name="details_repeat_weekly">Repetir semanalmente</string>
+    <string name="details_sunday">Domingo</string>
+    <string name="details_monday">Lunes</string>
+    <string name="details_tuesday">Martes</string>
+    <string name="details_wednesday">Miercoles</string>
+    <string name="details_thursday">Jueves</string>
+    <string name="details_friday">Viernes</string>
+    <string name="details_saturday">Sabado</string>
+    <string name="details_alarm_tone">Tono de Llamada</string>
+    <string name="details_alarm_tone_default">Seleccione el tono de llamada</string>
+
+
 
 </resources>
