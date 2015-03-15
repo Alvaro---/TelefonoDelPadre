@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@android:color/background_dark">
 
     <TextView
         android:id="@+id/alarm_screen_title"
@@ -10,36 +11,55 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="28dp"
-        android:text="Alarm!"
-        android:textSize="38dp" />
+        android:text="Llamada Entrante"
+        android:textSize="38dp"
+        android:textColor="#ffc7e8ff" />
 
     <TextView
         android:id="@+id/alarm_screen_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/alarm_screen_button"
-        android:layout_below="@+id/alarm_screen_title"
-        android:layout_marginTop="28dp"
         android:text="00 : 00"
-        android:textSize="52dp" />
+        android:textSize="52dp"
+        android:textColor="#ffc7e8ff"
+        android:layout_below="@+id/alarm_screen_title"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/alarm_screen_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/alarm_screen_time"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="28dp"
-        android:text="Alarm name" />
+        android:text="Alarm name"
+        android:textColor="#ffc7e8ff"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
     
     <Button
         android:id="@+id/alarm_screen_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="51dp"
+        android:text="DEVOLVER"
+        android:textSize="38dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="106dp"
-        android:text="Dismiss"
-        android:textSize="38dp" />
+        android:layout_alignLeft="@+id/alarm_answer"
+        android:layout_alignStart="@+id/alarm_answer"
+        android:layout_alignRight="@+id/alarm_answer"
+        android:layout_alignEnd="@+id/alarm_answer"
+        android:background="#ffff3c3f" />
+
+    <Button
+        android:id="@+id/alarm_answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="52dp"
+        android:text="CONTESTAR"
+        android:textSize="38dp"
+        android:layout_above="@+id/alarm_screen_button"
+        android:background="#ff2aff1a"
+        android:layout_alignRight="@+id/alarm_screen_title"
+        android:layout_alignEnd="@+id/alarm_screen_title"
+        android:layout_alignLeft="@+id/alarm_screen_title"
+        android:layout_alignStart="@+id/alarm_screen_title" />
 
 </RelativeLayout>

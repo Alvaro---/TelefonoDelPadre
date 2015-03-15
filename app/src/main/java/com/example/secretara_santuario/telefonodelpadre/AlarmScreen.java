@@ -2,6 +2,7 @@ package com.example.secretara_santuario.telefonodelpadre;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -52,6 +53,17 @@ public class AlarmScreen extends Activity {
 				finish();
 			}
 		});
+
+        Button aceptarButton = (Button) findViewById(R.id.alarm_answer);
+        aceptarButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getApplicationContext(), LlamadaActivity.class);
+                mPlayer.stop();
+                startActivity(i);
+                finish();
+            }
+        });
 
 		//Play alarm tone
 		mPlayer = new MediaPlayer();
