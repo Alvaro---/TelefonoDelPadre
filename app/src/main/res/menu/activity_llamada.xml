@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="@string/opcion1" android:id="@+id/op1"
+    <item android:title="@string/opcion1" android:id="@+id/nuevaMeditacion"
         android:showAsAction="never"/>
 
     <item android:title="@string/opcion2"
-        android:id="@+id/op2" />
+        android:id="@+id/fraseDelDia" />
 
     <item android:title="@string/opcion3"
-        android:id="@+id/op3" />
+        android:id="@+id/compartirFrase" />
 
     <item android:title="@string/opcion4"
-        android:id="@+id/op4" />
+        android:id="@+id/verMeditaciones" />
 
 </menu>

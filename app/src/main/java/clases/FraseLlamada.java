@@ -3,23 +3,21 @@ package clases;
 /**
  * Created by Alvaro on 02/03/2015.
  */
-import android.content.Context;
 
-import Coneccion.Conexion;
 import repository.repoFraseLlamada;
-import repository.sqliteFraseLlamada;
+import repositorySQLite.sqliteFraseLlamada;
 
 public class FraseLlamada {
 
     String frase;
-    Context con;
+    String fecha;
+    String meditacionPropia;
     String meditacionPerssonal;
 
     public repoFraseLlamada repository=new sqliteFraseLlamada();
 
-    public FraseLlamada(String frase, Context con) {
+    public FraseLlamada(String frase) {
         this.frase = frase;
-        this.con=con;
     }
 
     public String getFrase() {
@@ -30,7 +28,23 @@ public class FraseLlamada {
         this.frase = frase;
     }
 
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getMeditacionPropia() {
+        return meditacionPropia;
+    }
+
+    public void setMeditacionPropia(String meditacionPropia) {
+        this.meditacionPropia = meditacionPropia;
+    }
+
     public String getFraseNueva(){
-        return repository.NuevaFrase(this.con);
+        return repository.NuevaFrase();
     }
 }

@@ -19,7 +19,7 @@ public class Conexion extends SQLiteOpenHelper {
     //creacion de tablas
     private String tb1="CREATE TABLE frases (frase TEXT primarykey)";
     private String tb2C="CREATE TABLE meditacion(frase TEXT, comentario TEXT, primary key (frase, comentario), foreign key (frase) references frases)";
-    private String tb3F="CREATE TABLE fechas (fecha TEXT primarykey, frase TEXT foreign key (frase) references frases)";
+    private String tb3F="CREATE TABLE fechasCapital (fecha TEXT primarykey, frase TEXT, foreign key (frase) references frases)";
 
     //modificacion de tablas
 
@@ -123,7 +123,7 @@ public class Conexion extends SQLiteOpenHelper {
     }
 
     //llamada al constructor
-    public Conexion(Context context) {
+    private Conexion(Context context) {
         /*En lugar de esto creo que se podria aumentar todos los campos en el getInstance y ademas en la creacion de la
         instancia dentro del getInstance
         ademas. Eso tal vez para cambiar la version o algo asi.*/
@@ -135,6 +135,8 @@ public class Conexion extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         //Creacion de tabla
         db.execSQL(tb1);
+        db.execSQL(tb2C);
+        db.execSQL(tb3F);
         //Insercion de Frases
         db.execSQL(a1);
         db.execSQL(a2);
